@@ -17,12 +17,17 @@ const App = () => {
         price: 99.99}
     ]
 
+    const addExpensehandler = (expense) => {
+        console.log('In App.js')
+        console.log(expense)
+    }
+
 
 
 
     return (
         <div className="App">
-            <NewExpense></NewExpense>
+            <NewExpense onAddExpense={addExpensehandler}></NewExpense>
             <Expenses expenseData={expenses}></Expenses>
         </div>
     );
