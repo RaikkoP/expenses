@@ -1,9 +1,8 @@
 import ExpenseItem from "./ExpenseItem";
 import ExpenseDate from "./ExpenseDate";
 import './Expenses.css'
-import ExpenseFilter from "./ExpenseFilter";
 import Card from "../UI/Card";
-import expenseFilter from "./ExpenseFilter";
+import ExpenseFilter from "./ExpenseFilter";
 
 const Expenses = (props) => {
 

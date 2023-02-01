@@ -1,17 +1,24 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import './ExpenseFilter.css';
 
 const ExpensesFilter = (props) => {
 
+    const [year, setYear] = useState('2023');
+
     const yearChangeHandler = (event) => {
         console.log(`Year changed to ${event.target.value} by ExpenseFilter.js`)
+        setYear(event.target.value)
+    };
+
+    useEffect(() => {
         const filterData = {
-            year: event.target.value
+            year: year
         }
         console.log(filterData)
+
         props.onSaveFilterData(filterData)
-    }
+    }, [year])
 
 
 
