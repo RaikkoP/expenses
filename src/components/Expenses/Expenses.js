@@ -14,7 +14,11 @@ const Expenses = (props) => {
             <ExpenseFilter onSaveFilterData={filterExpenseDatahandler}></ExpenseFilter>
             {
                 props.expenseData.map((expenses) => {
-                    return <ExpenseItem expenseData={expenses}></ExpenseItem>
+                    return <ExpenseItem
+                    id={expenses.id}
+                    title={expenses.title}
+                    price={expenses.price}
+                    date={expenses.date}></ExpenseItem>
             })
         }
         </Card>
