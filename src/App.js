@@ -5,21 +5,29 @@ import ExpenseItem from "./components/Expenses/ExpenseItem";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/Expenses/NewExpense";
 
-const App = () => {
-    const expenses = [
-        {
+const DUMMY_EXPENSES = [
+    {
         date : new Date(2023,0,10),
         title : 'New book',
         price : 30.99
     },
-        {date: new Date(2023,0,10),
+    {
+        date: new Date(2023,0,10),
         title: 'New jeans',
-        price: 99.99}
-    ]
+        price: 99.99
+    },
+    {
+        date: new Date(2023, 0, 10),
+        title: 'New bag',
+        price: 199.99
+    }
+]
 
-    const addExpensehandler = (expense) => {
+const App = () => {
+
+    const addExpensehandler = (expenseData) => {
         console.log('In App.js')
-        console.log(expense)
+        console.log(expenseData)
     }
 
 
@@ -29,7 +37,7 @@ const App = () => {
     return (
         <div className="App">
             <NewExpense onAddExpense={addExpensehandler}></NewExpense>
-            <Expenses expenseData={expenses}></Expenses>
+            <Expenses expenseData={DUMMY_EXPENSES}></Expenses>
         </div>
     );
 }
