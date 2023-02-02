@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-
+import React, {useState} from "react";
 import ExpenseItem from "./components/Expenses/ExpenseItem";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/Expenses/NewExpense";
@@ -24,12 +24,17 @@ const DUMMY_EXPENSES = [
 ]
 
 const App = () => {
+    const [expenses, setExpenses] = useState(DUMMY_EXPENSES)
+
 
     const addExpensehandler = (expenseData) => {
         console.log('In App.js')
-        console.log(expenseData)
+        setExpenses((previousExpenses) => {
+            return [expenseData, ...previousExpenses]
+        })
     }
 
+    console.log(expenses)
 
 
 
