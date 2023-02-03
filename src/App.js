@@ -14,13 +14,13 @@ const DUMMY_EXPENSES = [
     },
     {
         id: 'e2',
-        date: new Date(2023,0,10),
+        date: new Date(2024,0,10),
         title: 'New jeans',
         price: 99.99
     },
     {
         id: 'e3',
-        date: new Date(2023, 0, 10),
+        date: new Date(2024, 0, 10),
         title: 'New bag',
         price: 199.99
     }
