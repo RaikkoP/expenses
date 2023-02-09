@@ -31,7 +31,12 @@ const ExpenseForm = (props) => {
         setEnteredDate('')
     }
 
+    const changeMenuState = (menuState) => {
+        props.changeMenuState(menuState)
+    }
+
     return(
+
         <form onSubmit={submitHandler}>
             <div className="new-expense__controls">
                 <div className="new-expense__control">
@@ -49,9 +54,11 @@ const ExpenseForm = (props) => {
                 </div>
             </div>
             <div className="new-expense__actions">
-                <button type="submit">Add Expense</button>
+                <button type="submit" >Add Expense</button>
+                <button onClick={() => changeMenuState('Closed')}>Cancel</button>
             </div>
         </form>
+
     )
 }
 
