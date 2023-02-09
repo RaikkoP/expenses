@@ -13,12 +13,16 @@ const Expenses = (props) => {
 
     }
 
+
+    let expenseElement = props.expenseData.filter(expense => expense.date.getFullYear() === selectedYear)
+
     return (
         <Card className="expenses">
             <ExpenseFilter onSaveFilterData={filterExpenseDatahandler} />
-            {props.expenseData
-                .filter(expense => expense.date.getFullYear() === selectedYear)
-                .map(expense => (
+            {expenseElement.length === 0
+                && <p className="errorHandler">No expenses found</p>}
+            {expenseElement.length > 0 &&
+                expenseElement.map(expense => (
                     <ExpenseItem
                         id={expense.id}
                         title={expense.title}
