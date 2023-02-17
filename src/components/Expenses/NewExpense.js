@@ -21,7 +21,7 @@ const NewExpense = (props) => {
 
     return(
         <div className="new-expense">
-            {state === 'Closed' && <button onClick={() => changeMenuState('Open')}>Add new Expense</button>}
+            {state === 'Closed' && <button className='theclick' onClick={() => changeMenuState('Open')}>Add new Expense</button>}
             {state === 'Open' &&
             <ExpenseForm onSaveExpenseData={saveExpenseDatahandler} changeMenuState={changeMenuState}></ExpenseForm>}
         </div>
