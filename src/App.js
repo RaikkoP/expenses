@@ -4,6 +4,7 @@ import React, {useState} from "react";
 import ExpenseItem from "./components/Expenses/ExpenseItem";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/Expenses/NewExpense";
+import UserMain from './components/Users/UserMain';
 
 const DUMMY_EXPENSES = [
     {
@@ -28,6 +29,9 @@ const DUMMY_EXPENSES = [
 
 const App = () => {
     const [expenses, setExpenses] = useState(DUMMY_EXPENSES)
+    const [loggedIn, setLoggedIn] = useState(false)
+
+   
 
 
     const addExpensehandler = (expenseData) => {
@@ -44,8 +48,16 @@ const App = () => {
 
     return (
         <div className="App">
-            <NewExpense onAddExpense={addExpensehandler}></NewExpense>
-            <Expenses expenseData={expenses}></Expenses>
+            <UserMain loggedIn={setLoggedIn}></UserMain>
+            {loggedIn === false &&  <Expenses expenseData={expenses}></Expenses>}
+            {loggedIn === true &&
+            <div>
+                <NewExpense onAddExpense={addExpensehandler}></NewExpense>
+                <Expenses expenseData={expenses}></Expenses>
+            </div>
+            }
+            
+           
         </div>
     );
 }
