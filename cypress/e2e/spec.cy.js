@@ -4,8 +4,11 @@ describe('Expenses', function() {
     cy.get('.expense-item').should('have.length', 1);
   });
 
-  it('should add a new expense to the list', function() {
+  it('should add a new user and new expense to the list', function() {
     cy.visit('http://localhost:3000/');
+    cy.get('#username').type('Test');
+    cy.get('#age').type('99');
+    cy.get('.adduser').click();
     cy.get('.theclick').click();
     cy.get('.title').type('Phone bill');
     cy.get('.amount').type('100');
